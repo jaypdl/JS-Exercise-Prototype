@@ -83,6 +83,19 @@ Car.prototype.fill = function(gallons){
   this.tank += gallons;
 }
 
+Car.prototype.drive = function(distance){
+  let range = this.milesPerGallon * this.tank;
+  if (distance < range) {
+    this.odometer += distance;
+    this.tank -= (distance / this.milesPerGallon);
+  } else {
+    this.odometer += range;
+    this.tank = 0 ;
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  }
+}
+
+
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.

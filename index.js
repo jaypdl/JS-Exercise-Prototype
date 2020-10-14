@@ -19,7 +19,7 @@ Airplane.prototype.land = function () {
   this.isFlying = false;
 };
 
-
+const newPlane = new Airplane("Vroom");
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -47,7 +47,8 @@ function Person(name, age) {
 Person.prototype.eat = function(someFood){
   if (this.stomach.length < 10){
     this.stomach.push(someFood);
-  }
+    return this.stomach;
+  } else {return `I'm Full`;}
 }
 
 Person.prototype.poop = function(){
@@ -57,7 +58,7 @@ Person.prototype.toString = function(){
   return `${this.name}, ${this.age}`;
 }
 
-
+const jay = new Person("Jay",30);
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -95,6 +96,8 @@ Car.prototype.drive = function(distance){
   }
 }
 
+const myCar = new Car("Corolla",40);
+
 
 /*
   TASK 3
@@ -111,6 +114,8 @@ Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`;
 }
+
+const infant = new Baby("Mari", 5, "Furry Things");
 
 /* 
   TASK 4
